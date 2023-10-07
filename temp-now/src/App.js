@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
-import CurrentCard from './Components/Cards/CurrentCard/CurrentCard';
+import CurrentCard from './Components/Board/Board';
 
 function App() {
   return (

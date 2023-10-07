@@ -1,0 +1,75 @@
+.currentBoard {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(5.4px);
+    width: 50%;
+    height: fit-content;
+    padding: 2em;
+}
+
+.day {
+   
+
+}
+
+.date {
+    letter-spacing: .1em;
+    font-weight: 300;
+    margin-bottom: .5em;
+}
+
+.currentWeatherData {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 2em;
+    height: 100%;
+    width: 100%;
+   
+}
+
+.weatherSection {
+    font-size: 15rem;
+    position: relative;
+    display: flex;
+    width: 100%;
+   
+}
+.weatherSection img {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
+
+.weatherSection div{
+    transform: scale(1, 1.2);
+    -webkit-transform: scale(1, 1.2);
+    -moz-transform: scale(1, 1.2);
+    -ms-transform: scale(1, 1.2);
+    -o-transform: scale(1, 1.2);
+  
+
+}
+
+.weatherDegree {
+    font-size: 4rem;
+    position: absolute;
+    top:0%;
+    right:-30%;
+    margin-left: 1em;
+    
+    
+
+}
+
+.weatherConditionsSection img{
+   width: 35px;
+}
+.weatherConditionsSection div {
+    display: flex;
+    gap: 1em;
+    margin-bottom: .5em;
+   
+}
