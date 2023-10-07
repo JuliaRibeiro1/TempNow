@@ -6,8 +6,10 @@ import CurrentCard from './Components/Board/Board';
 function App() {
   return (
     <div className="App">
+      <div className='container'>
       <Header/>
       <CurrentCard/>
+      </div>
     </div>
   );
 }

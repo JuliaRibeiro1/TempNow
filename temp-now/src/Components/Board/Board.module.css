@@ -1,18 +1,12 @@
 .currentBoard {
-    background: rgba(255, 255, 255, 0.14);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    width: 50%;
+    width: 100%;
+    min-width: 400px;
     height: fit-content;
     padding: 2em;
-}
-
-.day {
    
-
 }
+
+
 
 .date {
     letter-spacing: .1em;
@@ -27,11 +21,12 @@
     gap: 2em;
     height: 100%;
     width: 100%;
+    font-size: 16px;
    
 }
 
 .weatherSection {
-    font-size: 15rem;
+    font-size: 15em;
     position: relative;
     display: flex;
     width: 100%;
@@ -49,7 +44,6 @@
     -moz-transform: scale(1, 1.2);
     -ms-transform: scale(1, 1.2);
     -o-transform: scale(1, 1.2);
-  
 
 }
 
@@ -59,17 +53,30 @@
     top:0%;
     right:-30%;
     margin-left: 1em;
-    
-    
 
 }
 
 .weatherConditionsSection img{
    width: 35px;
 }
+
 .weatherConditionsSection div {
     display: flex;
     gap: 1em;
     margin-bottom: .5em;
-   
+
+}
+
+@media (max-width: 460px) {
+    .currentWeatherData {
+        font-size: 13px;
+        background-color: aquamarine;
+    }
+    .weatherSection {
+        font-size: 5em;
+    }
+    .currentBoard {
+        width: 100%;
+    }
+
 }
