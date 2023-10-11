@@ -1,14 +1,15 @@
 .App {
-  background: url(./Assets/backgroundApp.png);
-  background-size: cover;
+   background: url(./Assets/backgroundApp.png);
+   background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
    align-items: center;
-   width: 100vw;
+   width: 100%;
    padding: 2em;
+   overflow-x: hidden;
 
 }
 .container {
@@ -24,4 +25,23 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.4px);
   -webkit-backdrop-filter: blur(5.4px);
+}
+
+.cardBlur {
+
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+   display: flex;
+    justify-content: center;
+    align-items: center;
 }

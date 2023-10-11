@@ -3,12 +3,12 @@ import styles from "./Board.module.css"
 import windIcon from "../../Assets/wind-direction-icon.png"
 import rainIcon from "../../Assets/rain-percentage.png"
 import icon from "../../Assets/weather-icon.png"
+import Header from './Header'
+
 function Board() {
   return (
     <section className={`${styles.currentBoard} blur`}>
-        <h2 className={styles.date}>24 de Agosto de 2023</h2>
-        
-            <span className={styles.day}>Domingo</span>
+            <Header/>
             <div className={styles.currentWeatherData}>
             <div>
                 <img/>

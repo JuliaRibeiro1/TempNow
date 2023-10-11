@@ -1,0 +1,31 @@
+.section {
+    padding: 2em;
+    width: 25%;
+    text-align: center;
+    margin-top: 2.5em;
+  
+}
+
+.cardContainer {
+    gap: 1.5em;
+
+}
+
+.date {
+    background-color: #ECECEC;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    color: #658096;
+    flex-direction: column;
+    
+}
+
+.section img {
+    width: 60px;
+    height: 60px;
+}
+
+.minMaxContainer {
+    margin-top: 1em;
+}

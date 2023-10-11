@@ -1,7 +1,10 @@
 .header {
     width: 60%;
+    min-width:  320px;
   
 }
+
+
 
 .header img {
     display: block;
@@ -11,9 +14,11 @@
 .locationIcon {
     width: 25px;
 }
-
+.container {
+    display: flex;
+}
 .location {
-    margin-bottom: 2em;
+    margin: 1.5em 0;
     width: 100%;
     display: flex;
     padding: 1em;

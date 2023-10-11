@@ -1,0 +1,13 @@
+
+.header {
+    z-index: 1000;
+    width: 100%;
+    
+}
+
+.date {
+    letter-spacing: .1em;
+    font-weight: 300;
+    margin-bottom: .5em;
+}
+
