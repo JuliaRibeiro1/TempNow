@@ -5,8 +5,13 @@ import rainIcon from "../../Assets/rain-percentage.png"
 import icon from "../../Assets/weather-icon.png"
 import Header from './Header.js'
 
+interface BoardProps {
+    temperature: number,
+    wind : number,
+    rain: number
+}
 
-function Board(temperature : Number) {
+function Board({temperature, wind, rain} : BoardProps) {
       return (
     <section className={`${styles.currentBoard} blur`}>
             <Header data={new Date()}/>
@@ -16,7 +21,7 @@ function Board(temperature : Number) {
                 <div className={styles.weatherSection}>
                     <img src={icon}/>
                     <div>
-                        23
+                        {temperature}
                     </div>
                     <span className={styles.weatherDegree}>°c</span>
                 </div>
@@ -24,11 +29,11 @@ function Board(temperature : Number) {
             <div className={styles.weatherConditionsSection}>
                 <div>
                     <img src={windIcon}/>
-                    <div>Wind 10KM</div>
+                    <div>{wind}</div>
                 </div>
                 <div>
                     <img src={rainIcon}/>
-                    <div>Chuva 50%</div>
+                    <div>{rain} </div>
                 </div>
             </div>
         </div>
