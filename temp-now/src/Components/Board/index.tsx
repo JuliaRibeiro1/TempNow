@@ -6,7 +6,7 @@ import icon from "../../Assets/weather-icon.png"
 import Header from './Header.js'
 
 interface BoardProps {
-    temperature: number,
+    temperature: number[],
     wind : number,
     rain: number
 }

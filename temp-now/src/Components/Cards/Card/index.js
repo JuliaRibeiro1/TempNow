@@ -6,10 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const weather_icon_png_1 = __importDefault(require("../../../Assets/weather-icon.png"));
 const Card_module_css_1 = __importDefault(require("./Card.module.css"));
-const useFetch_1 = __importDefault(require("../../../Hooks/useFetch"));
 function Card() {
-    const { data } = (0, useFetch_1.default)("https://api.open-meteo.com/v1/forecast?latitude=-23.5475&longitude=-46.6361&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,rain,snowfall,windspeed_10m,is_day&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=GMT&forecast_days=3&models=best_match");
-    console.log(data);
     return (react_1.default.createElement("section", { className: `${Card_module_css_1.default.section} cardBlur` },
         react_1.default.createElement("div", null,
             react_1.default.createElement("div", { className: `${Card_module_css_1.default.cardContainer} center` },
