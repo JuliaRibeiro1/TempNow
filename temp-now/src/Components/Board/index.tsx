@@ -6,7 +6,7 @@ import icon from "../../Assets/weather-icon.png"
 import Header from './Header.js'
 
 interface BoardProps {
-    temperature: number[],
+    temperature: number,
     wind : number,
     rain: number
 }
@@ -21,7 +21,7 @@ function Board({temperature, wind, rain} : BoardProps) {
                 <div className={styles.weatherSection}>
                     <img src={icon}/>
                     <div>
-                        {temperature}
+                        {Math.ceil(temperature)}
                     </div>
                     <span className={styles.weatherDegree}>°c</span>
                 </div>

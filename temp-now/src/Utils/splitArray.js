@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function splitArray(array) {
-    const shares = array.length / 24;
+    const days = 3;
+    const shares = array.length / days;
     const splitArr = [];
     for (let i = 0; i < array.length; i += shares) {
-        const parte = array.slice(i, i + shares);
-        splitArr.push(parte);
+        const share = array.slice(i, i + shares);
+        splitArr.push(share);
     }
     return splitArr;
 }

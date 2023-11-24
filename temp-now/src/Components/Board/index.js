@@ -17,7 +17,7 @@ function Board({ temperature, wind, rain }) {
                 react_1.default.createElement("img", null),
                 react_1.default.createElement("div", { className: Board_module_css_1.default.weatherSection },
                     react_1.default.createElement("img", { src: weather_icon_png_1.default }),
-                    react_1.default.createElement("div", null, temperature),
+                    react_1.default.createElement("div", null, Math.ceil(temperature)),
                     react_1.default.createElement("span", { className: Board_module_css_1.default.weatherDegree }, "\u00B0c"))),
             react_1.default.createElement("div", { className: Board_module_css_1.default.weatherConditionsSection },
                 react_1.default.createElement("div", null,

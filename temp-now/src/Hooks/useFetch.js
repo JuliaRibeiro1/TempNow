@@ -13,40 +13,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
+const splitArray_1 = __importDefault(require("../Utils/splitArray"));
 function useFetch(apiUrl) {
     const [loading, setLoading] = react_1.default.useState(false);
     const [error, setError] = react_1.default.useState(null);
     const [data, setData] = react_1.default.useState(null);
+    const [temperature, setTemperature] = react_1.default.useState([]);
     react_1.default.useEffect(() => {
-        // Function to make the fetch request
         const fetchData = () => __awaiter(this, void 0, void 0, function* () {
             try {
-                // Set loading to true while fetching data
                 setLoading(true);
-                // Make the fetch request
                 const response = yield fetch(apiUrl);
-                // Check if the request was successful
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                // Parse the response as JSON and update the state
                 const data = yield response.json();
                 setData(data);
+                setTemperature((0, splitArray_1.default)(data.hourly.temperature_2m));
+                console.log(temperature);
             }
             catch (error) {
-                // Update the error state if an error occurs
                 setError("wdw");
             }
             finally {
-                // Set loading to false when the request is complete
                 setLoading(false);
             }
         });
-        // Call the fetchData function
         fetchData();
-    }, []);
+    }, [apiUrl]);
     return ({
         data,
+        temperature,
         loading,
         error
     });
