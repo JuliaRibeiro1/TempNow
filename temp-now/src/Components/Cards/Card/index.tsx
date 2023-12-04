@@ -3,8 +3,20 @@ import icon from "../../../Assets/weather-icon.png"
 import styles from "./Card.module.css"
 
 
-function Card() {
- 
+interface DailyData {
+  temperature_2m_max: number[];
+  // Add other properties as needed
+}
+
+interface CardProps {
+  temperatures: number[];
+  daily: DailyData,
+  index: number
+  
+}
+
+function Card({temperatures,daily, index} : CardProps ) {
+ console.log(daily)
   return (
     <section className={`${styles.section} cardBlur`}>
       <div>
@@ -16,7 +28,7 @@ function Card() {
           <img src={icon}/>
           </div>
           <div className={styles.minMaxContainer}>
-              <div>Máxima 11°</div>
+              <div>{`Máxima ${daily.temperature_2m_max[index]}`}</div>
               <div>Mínima 17°</div>
           </div>
         

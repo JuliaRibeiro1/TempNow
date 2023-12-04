@@ -1,3 +1,5 @@
+import ceilArray from "./ceilArray";
+
 
 function splitArray(array : number[]) : number[][] {
   const days = 3
@@ -6,7 +8,8 @@ function splitArray(array : number[]) : number[][] {
 
   for (let i = 0; i < array.length; i += shares) {
     const share = array.slice(i, i + shares);
-    splitArr.push(share);
+    splitArr.push(ceilArray(share));
+
   }
 
   return splitArr;

@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const weather_icon_png_1 = __importDefault(require("../../../Assets/weather-icon.png"));
 const Card_module_css_1 = __importDefault(require("./Card.module.css"));
-function Card() {
+function Card({ temperatures, daily, index }) {
+    console.log(daily);
     return (react_1.default.createElement("section", { className: `${Card_module_css_1.default.section} cardBlur` },
         react_1.default.createElement("div", null,
             react_1.default.createElement("div", { className: `${Card_module_css_1.default.cardContainer} center` },
@@ -15,7 +16,7 @@ function Card() {
                     react_1.default.createElement("div", null, "Seg")),
                 react_1.default.createElement("img", { src: weather_icon_png_1.default })),
             react_1.default.createElement("div", { className: Card_module_css_1.default.minMaxContainer },
-                react_1.default.createElement("div", null, "M\u00E1xima 11\u00B0"),
+                react_1.default.createElement("div", null, `Máxima ${daily.temperature_2m_max[index]}`),
                 react_1.default.createElement("div", null, "M\u00EDnima 17\u00B0")))));
 }
 exports.default = Card;

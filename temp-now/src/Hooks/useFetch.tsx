@@ -2,10 +2,12 @@ import React from 'react'
 import splitArray from '../Utils/splitArray'
 
 interface DataInterface {
+  daily: Object[],
   temperature_2m: number[],
   is_day: boolean[],
   windspeed_10m: number[],
-  precipitation_probability: number[]
+  precipitation_probability: number[],
+  temperature_2m_max: number[]
 }
 
 function useFetch(apiUrl : string) {
@@ -13,6 +15,7 @@ function useFetch(apiUrl : string) {
   const [error, setError] = React.useState<string | null>(null)
   const [data, setData] = React.useState<DataInterface | null>(null)
   const [temperature, setTemperature] = React.useState<number[][]>([]);
+  const [daily, setDaily] = React.useState<DataInterface | null>(null)
 
 
     React.useEffect(() => {
@@ -30,7 +33,9 @@ function useFetch(apiUrl : string) {
             const data = await response.json();
             setData(data)
             setTemperature(splitArray(data.hourly.temperature_2m))
+            setDaily(data.daily)
             console.log(temperature)
+            console.log(data)
           } catch (error) {
    
             setError("wdw");
@@ -49,7 +54,8 @@ function useFetch(apiUrl : string) {
     data,
     temperature,
     loading,
-    error
+    error,
+    daily
     }
   )
 }

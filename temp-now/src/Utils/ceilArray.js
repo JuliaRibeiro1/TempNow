@@ -1,10 +1,11 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importDefault(require("react"));
-function ceilArray() {
-    return (react_1.default.createElement("div", null, "ceilArray"));
+function ceilArray(array) {
+    const share = [];
+    array.map(number => {
+        share.push(Math.ceil(number));
+    });
+    console.log(share);
+    return share;
 }
 exports.default = ceilArray;

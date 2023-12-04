@@ -19,6 +19,7 @@ function useFetch(apiUrl) {
     const [error, setError] = react_1.default.useState(null);
     const [data, setData] = react_1.default.useState(null);
     const [temperature, setTemperature] = react_1.default.useState([]);
+    const [daily, setDaily] = react_1.default.useState(null);
     react_1.default.useEffect(() => {
         const fetchData = () => __awaiter(this, void 0, void 0, function* () {
             try {
@@ -30,7 +31,9 @@ function useFetch(apiUrl) {
                 const data = yield response.json();
                 setData(data);
                 setTemperature((0, splitArray_1.default)(data.hourly.temperature_2m));
+                setDaily(data.daily);
                 console.log(temperature);
+                console.log(data);
             }
             catch (error) {
                 setError("wdw");
@@ -45,7 +48,8 @@ function useFetch(apiUrl) {
         data,
         temperature,
         loading,
-        error
+        error,
+        daily
     });
 }
 exports.default = useFetch;
