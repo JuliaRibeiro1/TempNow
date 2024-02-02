@@ -16,7 +16,7 @@ function Card({ temperatures, daily, index }) {
                     react_1.default.createElement("div", null, "Seg")),
                 react_1.default.createElement("img", { src: weather_icon_png_1.default })),
             react_1.default.createElement("div", { className: Card_module_css_1.default.minMaxContainer },
-                react_1.default.createElement("div", null, `Máxima ${daily.temperature_2m_max[index]}`),
-                react_1.default.createElement("div", null, "M\u00EDnima 17\u00B0")))));
+                react_1.default.createElement("div", null, `Máxima ${daily && Math.ceil(daily.temperature_2m_max[index])}`),
+                react_1.default.createElement("div", null, `Mínima° ${daily && Math.ceil(daily.temperature_2m_min[index])}`)))));
 }
 exports.default = Card;

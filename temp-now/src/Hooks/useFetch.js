@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const splitArray_1 = __importDefault(require("../Utils/splitArray"));
-function useFetch(apiUrl) {
+function useFetch() {
     const [loading, setLoading] = react_1.default.useState(false);
     const [error, setError] = react_1.default.useState(null);
     const [data, setData] = react_1.default.useState(null);
@@ -24,7 +24,7 @@ function useFetch(apiUrl) {
         const fetchData = () => __awaiter(this, void 0, void 0, function* () {
             try {
                 setLoading(true);
-                const response = yield fetch(apiUrl);
+                const response = yield fetch("https://api.open-meteo.com/v1/forecast?latitude=-23.5475&longitude=-46.6361&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,rain,snowfall,windspeed_10m,is_day&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=GMT&forecast_days=3&models=best_match");
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -43,7 +43,7 @@ function useFetch(apiUrl) {
             }
         });
         fetchData();
-    }, [apiUrl]);
+    }, []);
     return ({
         data,
         temperature,

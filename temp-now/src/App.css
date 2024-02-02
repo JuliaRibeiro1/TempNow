@@ -1,5 +1,4 @@
 .App {
-   background: url(./Assets/backgroundApp.png);
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
@@ -8,9 +7,18 @@
    flex-direction: column;
    align-items: center;
    width: 100%;
-   padding: 2em;
    overflow-x: hidden;
+   position: relative;
 
+}
+.backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
 }
 .container {
   width: 60%;
@@ -28,7 +36,6 @@
 }
 
 .cardBlur {
-
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
