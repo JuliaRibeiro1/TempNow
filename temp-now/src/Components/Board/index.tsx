@@ -2,16 +2,20 @@ import React from 'react'
 import styles from "./Board.module.css"
 import windIcon from "../../Assets/wind-direction-icon.png"
 import rainIcon from "../../Assets/rain-percentage.png"
-import icon from "../../Assets/weather-icon.png"
 import Header from './Header.js'
+import currentWeatherIcon from '../../Utils/currentWeatherIcon'
 
 interface BoardProps {
-    temperature: number,
+    temperature: number | undefined,
     wind : number,
-    rain: number
+    rain: number,
+    snow: number
 }
 
-function Board({temperature, wind, rain} : BoardProps) {
+function Board({temperature, wind, rain, snow} : BoardProps) {
+    console.log(temperature)
+    if(temperature) {
+    const img = currentWeatherIcon(temperature, rain, snow)
       return (
     <section className={`${styles.currentBoard} blur`}>
             <Header data={new Date()}/>
@@ -19,17 +23,19 @@ function Board({temperature, wind, rain} : BoardProps) {
             <div>
                 <img/>
                 <div className={styles.weatherSection}>
-                    <img src={icon}/>
+                    <img src={img}/>
+
                     <div>
                         {Math.ceil(temperature)}
                     </div>
+                           
                     <span className={styles.weatherDegree}>°c</span>
                 </div>
             </div>
             <div className={styles.weatherConditionsSection}>
                 <div>
                     <img src={windIcon}/>
-                    <div>{wind}</div>
+                    <div>{Math.ceil(wind)}</div>
                 </div>
                 <div>
                     <img src={rainIcon}/>
@@ -39,6 +45,10 @@ function Board({temperature, wind, rain} : BoardProps) {
         </div>
     </section>
   )
+      }
+      else {
+        <div>ofeefeggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</div>
+      }
 }
 
 export default Board

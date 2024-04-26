@@ -6,7 +6,7 @@ function DegreeBtn() {
     <div>
         <label className={styles.switch} htmlFor="checkbox">
      
-            <input type="checkbox" id="checkbox" />
+            <input type="checkbox" id="checkbox" checked={true} />
             <div className={`${styles.round} ${styles.slider} center`}>
                 <div>°C</div>
                 <div>F</div>

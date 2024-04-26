@@ -13,27 +13,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
-const splitArray_1 = __importDefault(require("../Utils/splitArray"));
 function useFetch() {
     const [loading, setLoading] = react_1.default.useState(false);
     const [error, setError] = react_1.default.useState(null);
+    const [dailyData, setDailyData] = react_1.default.useState(null);
+    const [currentData, setCurrentData] = react_1.default.useState(null);
+    const [temperature, setTemperature] = react_1.default.useState();
     const [data, setData] = react_1.default.useState(null);
-    const [temperature, setTemperature] = react_1.default.useState([]);
-    const [daily, setDaily] = react_1.default.useState(null);
     react_1.default.useEffect(() => {
         const fetchData = () => __awaiter(this, void 0, void 0, function* () {
             try {
                 setLoading(true);
-                const response = yield fetch("https://api.open-meteo.com/v1/forecast?latitude=-23.5475&longitude=-46.6361&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,rain,snowfall,windspeed_10m,is_day&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=GMT&forecast_days=3&models=best_match");
+                const response = yield fetch("https://api.open-meteo.com/v1/forecast?latitude=-23.5475&longitude=-46.6361&current=temperature_2m,rain,snowfall,wind_speed_10m&hourly=is_day&daily=temperature_2m_max,temperature_2m_min&temperature_unit=celsius&timezone=GMT&forecast_days=3&models=best_match");
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                const data = yield response.json();
-                setData(data);
-                setTemperature((0, splitArray_1.default)(data.hourly.temperature_2m));
-                setDaily(data.daily);
-                console.log(temperature);
-                console.log(data);
+                const dataResult = yield response.json();
+                setData(dataResult);
+                setDailyData(dataResult.daily);
+                setCurrentData(dataResult.current);
+                setTemperature(data === null || data === void 0 ? void 0 : data.current.temperature_2m);
             }
             catch (error) {
                 setError("wdw");
@@ -49,7 +48,8 @@ function useFetch() {
         temperature,
         loading,
         error,
-        daily
+        dailyData,
+        currentData
     });
 }
 exports.default = useFetch;

@@ -9,7 +9,9 @@ const CardsContainer_module_css_1 = __importDefault(require("./CardsContainer.mo
 function CardsContainer({ daily }) {
     const cardElements = [];
     if (daily && daily.time) {
+        console.log(daily);
         for (let i = 1; i < daily.time.length; i++) {
+            console.log(i);
             cardElements.push(react_1.default.createElement(Card_1.default, { key: i, daily: daily, currentCardIndex: i }));
         }
     }
